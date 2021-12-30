@@ -1,0 +1,13 @@
+stuck on ssh command when vagrant up:
+only worked after I followed steps described here to disable Virtual machine platform on windows features
+https://stackoverflow.com/questions/38463579/vagrant-hangs-at-ssh-auth-method-private-key
+
+error to install jenkins, change jenkins.sh to
+wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
+sudo sh -c 'echo deb https://pkg.jenkins.io/debian-stable binary/ > \
+    /etc/apt/sources.list.d/jenkins.list'
+sudo apt-get update
+sudo apt-get install jenkins
+
+to access github, had to create a token
+https://docs.github.com/pt/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token

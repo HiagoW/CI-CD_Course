@@ -1,0 +1,23 @@
+Token: 66a2095bc179ffcb59eea99bbc2d1464544d28f9
+
+Comando gerado no sonar qube:
+
+sonar-scanner \
+  -Dsonar.projectKey=jenkins-todolist \
+  -Dsonar.sources=. \
+  -Dsonar.host.url=http://192.168.33.10:9000 \
+  -Dsonar.login=66a2095bc179ffcb59eea99bbc2d1464544d28f9
+
+Comando do instrutor do curso para o job:
+#!/bin/bash
+# Baixando o Sonarqube
+wget https://s3.amazonaws.com/caelum-online-public/1110-jenkins/05/sonar-scanner-cli-3.3.0.1492-linux.zip
+
+# Descompactando o scanner
+unzip sonar-scanner-cli-3.3.0.1492-linux.zip
+        
+./sonar-scanner-3.3.0.1492-linux/bin/sonar-scanner   -X \
+  -Dsonar.projectKey=jenkins-todolist \
+  -Dsonar.sources=. \
+  -Dsonar.host.url=http://192.168.33.10:9000 \
+  -Dsonar.login=66a2095bc179ffcb59eea99bbc2d1464544d28f9
